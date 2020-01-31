@@ -26,9 +26,9 @@ router.post('/signin',(req,res)=>{
     }
 //jwt
 
-jwt.sign({username:user.username,userId:user._id,email:user.email},"jaishreeram",(err,token)=>{
+jwt.sign({username:user.username,userId:user._id,email:user.email},"topsecret",(err,token)=>{
   if(err) return res.json({success:false,msg:"token not generated"})
-  res.json({token});
+  res.json({token,username:user.username});
 })
 
   })

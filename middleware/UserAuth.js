@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 exports.validToken = (req,res,next)=>{
     var token = req.headers.authorization;
     if(token){
-        jwt.verify(token,"jaishreeram",(err,payload)=>{
+        jwt.verify(token,"topsecret",(err,payload)=>{
             if(err) return res.status(500).json({
                 err,
                 success:false,
